@@ -8,10 +8,10 @@
         <button id="btnMudaLayout" class="opcoesDaPagina-opcao opcoesDaPagina-botao">
           Linhas
         </button>
-        <button id="btnAjuda" class="opcoesDaPagina-opcao opcoesDaPagina-botao" v-on:click="print">
+        <button id="btnAjuda" class="opcoesDaPagina-opcao opcoesDaPagina-botao" v-on:click="carregaCartao">
           ?
         </button>
-        <button id="btnSync" class="opcoesDaPagina-opcao opcoesDaPagina-botao botaoSync botaoSync--sincronizado">
+        <button id="btnSync"  class="opcoesDaPagina-opcao opcoesDaPagina-botao botaoSync botaoSync--sincronizado">
           <svg class="botaoSync-icone">
             <use xlink:href="#iconeSincronizar"></use>
           </svg>
@@ -30,7 +30,8 @@
   export default {
     name: "Header",
     props: {
-      showOption: Boolean
+      showOption: Boolean,
+      carregaCartao: Function
     },
     methods : {
       print: function() {

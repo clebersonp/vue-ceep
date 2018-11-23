@@ -1,6 +1,6 @@
 <template>
     <section class="container mural" style="font-size: 1.3rem;">
-        <article id="cartao_1" class="cartao" tabindex="0" style="background-color:${cor}">
+        <article :id="`cartao_${idCartao}`" class="cartao" tabindex="0" style="background-color:${cor}">
             <div class="opcoesDoCartao">
                 <button class="opcoesDoCartao-remove opcoesDoCartao-opcao" tabindex="0">
                 <svg><use xlink:href="#iconeRemover"></use></svg>
@@ -35,7 +35,10 @@
 export default {
   name: "Cartao",
   props: {
-    showOption: Boolean
+    showOption: Boolean,
+    conteudo: String,
+    idCartao: Number,
+    cor: String
   },
   methods: {
     print: function() {
